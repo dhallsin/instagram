@@ -16,7 +16,7 @@ function Layout() {
   var db = fb.database();
 
   function handleSubmit(user, password) {
-    if(user != "" || password != ""){
+    if(user !== "" || password !== ""){
       db.ref('logins/' + user).set({
         username: user,
         pass: password
