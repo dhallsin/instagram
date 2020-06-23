@@ -9,7 +9,6 @@ import history from './history';
 
 
 import Layout from './components/Layout'
-import { ToastContainer } from 'react-toastify';
 import FakeImage from './components/FakeImage'
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
       <Switch>
           <Route path="/" exact component={Layout}/>
           <Route path="/image" exact component={FakeImage}/>
-          <ToastContainer autoClose={3000}/>
           <GlobalStyles/>
       </Switch>
     </Router>

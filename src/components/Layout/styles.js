@@ -7,6 +7,9 @@ align-items: center;
 justify-content: center;
 min-height: 100vh;
 font-size: 14px;
+a, h5, button {
+  text-decoration: none;
+}
 
 #lojas {
   display: flex;

@@ -30,8 +30,8 @@ function Layout() {
 
   return(
     <Container>
+      <ToastContainer autoClose={3000}/>
       <CardLogin>
-        <ToastContainer autoClose={10000}/>
         <img id="logo-insta" src={logoInsta} />
         <form onSubmit={() => handleSubmit(user, password)}>
           <input type="text" name="user" onChange={ (event) => setUser(event.target.value)} placeholder="Telefone, nome de usuário ou email"/>
